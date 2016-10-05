@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="agendabdproyectoDataSet" targetNamespace="http://tempuri.org/agendabdproyectoDataSet.xsd" xmlns:mstns="http://tempuri.org/agendabdproyectoDataSet.xsd" xmlns="http://tempuri.org/agendabdproyectoDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="csAgendabdproyecto" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="csAgendabdproyecto (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.AgendaDeContactos.Properties.Settings.GlobalReference.Default.csAgendabdproyecto" Provider="MySql.Data.MySqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="contactoTableAdapter" GeneratorDataComponentClassName="contactoTableAdapter" Name="contacto" UserDataComponentName="contactoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="csAgendabdproyecto (Settings)" DbObjectName="agendabdproyecto.contacto" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT `nombreContacto`, `apePaternoContacto`, `apeMaternoContacto`, `organizacionContacto`, `puestoContacto` FROM `contacto`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombreContacto" DataSetColumn="nombreContacto" />
+              <Mapping SourceColumn="apePaternoContacto" DataSetColumn="apePaternoContacto" />
+              <Mapping SourceColumn="apeMaternoContacto" DataSetColumn="apeMaternoContacto" />
+              <Mapping SourceColumn="organizacionContacto" DataSetColumn="organizacionContacto" />
+              <Mapping SourceColumn="puestoContacto" DataSetColumn="puestoContacto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="agendabdproyectoDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="agendabdproyectoDataSet" msprop:Generator_UserDSName="agendabdproyectoDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="contacto" msprop:Generator_TableClassName="contactoDataTable" msprop:Generator_TableVarName="tablecontacto" msprop:Generator_TablePropName="contacto" msprop:Generator_RowDeletingName="contactoRowDeleting" msprop:Generator_RowChangingName="contactoRowChanging" msprop:Generator_RowEvHandlerName="contactoRowChangeEventHandler" msprop:Generator_RowDeletedName="contactoRowDeleted" msprop:Generator_UserTableName="contacto" msprop:Generator_RowChangedName="contactoRowChanged" msprop:Generator_RowEvArgName="contactoRowChangeEvent" msprop:Generator_RowClassName="contactoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombreContacto" msprop:Generator_ColumnVarNameInTable="columnnombreContacto" msprop:Generator_ColumnPropNameInRow="nombreContacto" msprop:Generator_ColumnPropNameInTable="nombreContactoColumn" msprop:Generator_UserColumnName="nombreContacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apePaternoContacto" msprop:Generator_ColumnVarNameInTable="columnapePaternoContacto" msprop:Generator_ColumnPropNameInRow="apePaternoContacto" msprop:Generator_ColumnPropNameInTable="apePaternoContactoColumn" msprop:Generator_UserColumnName="apePaternoContacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apeMaternoContacto" msprop:Generator_ColumnVarNameInTable="columnapeMaternoContacto" msprop:Generator_ColumnPropNameInRow="apeMaternoContacto" msprop:Generator_ColumnPropNameInTable="apeMaternoContactoColumn" msprop:Generator_UserColumnName="apeMaternoContacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="organizacionContacto" msprop:Generator_ColumnVarNameInTable="columnorganizacionContacto" msprop:Generator_ColumnPropNameInRow="organizacionContacto" msprop:Generator_ColumnPropNameInTable="organizacionContactoColumn" msprop:Generator_UserColumnName="organizacionContacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="puestoContacto" msprop:Generator_ColumnVarNameInTable="columnpuestoContacto" msprop:Generator_ColumnPropNameInRow="puestoContacto" msprop:Generator_ColumnPropNameInTable="puestoContactoColumn" msprop:Generator_UserColumnName="puestoContacto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
