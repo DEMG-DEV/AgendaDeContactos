@@ -1106,7 +1106,7 @@ namespace AgendaDeContactos.dsDetalleContactoTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::AgendaDeContactos.Properties.Settings.Default.csAgendabdproyecto;
+            this._connection.ConnectionString = global::AgendaDeContactos.Properties.Settings.Default.csDetalleContacto;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -21,31 +21,27 @@ namespace AgendaDeContactos
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dsDetalleContacto.contacto' table. You can move, or remove it, as needed.
-            this.contactoTableAdapter.Fill(this.dsDetalleContacto.contacto);
-            
-
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (this.dataGridView1.SelectedRows.Count > 0)
-            {
-                clDetalleContacto detalleContacto = new clDetalleContacto();
+            //if (this.dataGridView1.SelectedRows.Count > 0)
+            //{
+            //    clDetalleContacto detalleContacto = new clDetalleContacto();
 
-                detalleContacto.vaciarRegistro(((DataRowView)this.dataGridView1.SelectedRows[0].DataBoundItem).Row);
+            //    detalleContacto.vaciarRegistro(((DataRowView)this.dataGridView1.SelectedRows[0].DataBoundItem).Row);
 
-                this.dsDetalleContactoBindingSource.Clear();
-                this.dsDetalleContactoBindingSource.Add(detalleContacto);
-                //DataGridViewRow row = dataGridView1.CurrentRow;            
+            //    this.dsDetalleContactoBindingSource.Clear();
+            //    this.dsDetalleContactoBindingSource.Add(detalleContacto);
+            //    DataGridViewRow row = dataGridView1.CurrentRow;
 
-                //btnAñadir.Enabled = false;
-                //btnEditar.Enabled = false;
-                //btnEliminar.Enabled = false;
+            //    btnAñadir.Enabled = false;
+            //    btnEditar.Enabled = false;
+            //    btnEliminar.Enabled = false;
 
-                //btnGuardar.Visible = true;
-                //btnCancelar.Visible = true;
-            }
+            //    btnGuardar.Visible = true;
+            //    btnCancelar.Visible = true;
+            //}
         }
     }
 }

@@ -27,9 +27,9 @@ namespace AgendaDeContactos.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=root;database=agendabdproyecto")]
-        public string csAgendabdproyecto {
+        public string csDetalleContacto {
             get {
-                return ((string)(this["csAgendabdproyecto"]));
+                return ((string)(this["csDetalleContacto"]));
             }
         }
     }

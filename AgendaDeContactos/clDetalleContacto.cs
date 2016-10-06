@@ -116,7 +116,7 @@ namespace AgendaDeContactos
 
         public void borrarRegistro()
         {
-            this.taDetalleContacto.Delete(Convert.ToInt32(idContacto));
+            this.taDetalleContacto.Delete((int)idContacto);
         }
 
         public void editarRegistro()
