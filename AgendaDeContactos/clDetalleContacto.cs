@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +11,9 @@ namespace AgendaDeContactos
     class clDetalleContacto
     {
         dsDetalleContactoTableAdapters.contactoTableAdapter taDetalleContacto = new dsDetalleContactoTableAdapters.contactoTableAdapter();
+        ArrayList telefonos = new ArrayList();
+        ArrayList internet = new ArrayList();
+        ArrayList direcciones = new ArrayList();
 
         private long idContacto;
         private string tratamientoContacto;
@@ -116,11 +121,12 @@ namespace AgendaDeContactos
 
         public void borrarRegistro()
         {
-            this.taDetalleContacto.Delete((int)idContacto);
+            this.taDetalleContacto.Delete((int)this.idContacto);
         }
 
         public void editarRegistro()
         {
+            this.taDetalleContacto.Update(tratamientoContacto, nombreContacto, apePaternoContacto, apeMaternoContacto, organizacionContacto, puestoContacto, (int)idContacto);
             //this.taDetalleContacto.Update()
         }
 
