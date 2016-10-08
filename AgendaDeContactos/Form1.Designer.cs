@@ -46,14 +46,10 @@
             this.cbTratamiento = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtTelMovil = new System.Windows.Forms.TextBox();
+            this.txtTelFax = new System.Windows.Forms.TextBox();
+            this.txtTelParticular = new System.Windows.Forms.TextBox();
+            this.txtTelTrabajo = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -81,6 +77,13 @@
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.contactoTableAdapter = new AgendaDeContactos.dsDetalleContactoTableAdapters.contactoTableAdapter();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.dsTelefonos = new AgendaDeContactos.dsTelefonos();
+            this.telefonosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.telefonosTableAdapter = new AgendaDeContactos.dsTelefonosTableAdapters.telefonosTableAdapter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.contactoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsDetalleContactoBindingSource)).BeginInit();
@@ -89,6 +92,8 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTelefonos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telefonosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -242,14 +247,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.comboBox5);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.label13);
+            this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.label11);
+            this.groupBox2.Controls.Add(this.label10);
+            this.groupBox2.Controls.Add(this.txtTelMovil);
+            this.groupBox2.Controls.Add(this.txtTelFax);
+            this.groupBox2.Controls.Add(this.txtTelParticular);
+            this.groupBox2.Controls.Add(this.txtTelTrabajo);
             this.groupBox2.Location = new System.Drawing.Point(13, 154);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(402, 139);
@@ -257,93 +262,41 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Numeros de Telefono";
             // 
-            // textBox9
+            // txtTelMovil
             // 
-            this.textBox9.Location = new System.Drawing.Point(192, 104);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(204, 20);
-            this.textBox9.TabIndex = 7;
+            this.txtTelMovil.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonosBindingSource, "movilTelefono", true));
+            this.txtTelMovil.Location = new System.Drawing.Point(192, 104);
+            this.txtTelMovil.Name = "txtTelMovil";
+            this.txtTelMovil.ReadOnly = true;
+            this.txtTelMovil.Size = new System.Drawing.Size(204, 20);
+            this.txtTelMovil.TabIndex = 7;
             // 
-            // comboBox5
+            // txtTelFax
             // 
-            this.comboBox5.Enabled = false;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Trabajo",
-            "Particular",
-            "Fax del Trabajo",
-            "Móvil"});
-            this.comboBox5.Location = new System.Drawing.Point(7, 104);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(175, 21);
-            this.comboBox5.TabIndex = 6;
+            this.txtTelFax.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonosBindingSource, "faxTelefono", true));
+            this.txtTelFax.Location = new System.Drawing.Point(192, 77);
+            this.txtTelFax.Name = "txtTelFax";
+            this.txtTelFax.ReadOnly = true;
+            this.txtTelFax.Size = new System.Drawing.Size(204, 20);
+            this.txtTelFax.TabIndex = 5;
             // 
-            // textBox8
+            // txtTelParticular
             // 
-            this.textBox8.Location = new System.Drawing.Point(192, 77);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(204, 20);
-            this.textBox8.TabIndex = 5;
+            this.txtTelParticular.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonosBindingSource, "particularTelefono", true));
+            this.txtTelParticular.Location = new System.Drawing.Point(192, 48);
+            this.txtTelParticular.Name = "txtTelParticular";
+            this.txtTelParticular.ReadOnly = true;
+            this.txtTelParticular.Size = new System.Drawing.Size(204, 20);
+            this.txtTelParticular.TabIndex = 3;
             // 
-            // comboBox4
+            // txtTelTrabajo
             // 
-            this.comboBox4.Enabled = false;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Trabajo",
-            "Particular",
-            "Fax del Trabajo",
-            "Móvil"});
-            this.comboBox4.Location = new System.Drawing.Point(7, 76);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(175, 21);
-            this.comboBox4.TabIndex = 4;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(192, 48);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(204, 20);
-            this.textBox7.TabIndex = 3;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Trabajo",
-            "Particular",
-            "Fax del Trabajo",
-            "Móvil"});
-            this.comboBox3.Location = new System.Drawing.Point(7, 48);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(175, 21);
-            this.comboBox3.TabIndex = 2;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(192, 20);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(204, 20);
-            this.textBox6.TabIndex = 1;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Enabled = false;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Trabajo",
-            "Particular",
-            "Fax del Trabajo",
-            "Móvil"});
-            this.comboBox2.Location = new System.Drawing.Point(7, 20);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(175, 21);
-            this.comboBox2.TabIndex = 0;
+            this.txtTelTrabajo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.telefonosBindingSource, "trabajoTelefono", true));
+            this.txtTelTrabajo.Location = new System.Drawing.Point(192, 20);
+            this.txtTelTrabajo.Name = "txtTelTrabajo";
+            this.txtTelTrabajo.ReadOnly = true;
+            this.txtTelTrabajo.Size = new System.Drawing.Size(204, 20);
+            this.txtTelTrabajo.TabIndex = 1;
             // 
             // groupBox3
             // 
@@ -603,6 +556,56 @@
             // 
             this.contactoTableAdapter.ClearBeforeFill = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(94, 23);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(88, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Telefono Trabajo";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(86, 51);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(96, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Telefono Particular";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(113, 80);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Telefono Fax";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(105, 106);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(77, 13);
+            this.label13.TabIndex = 11;
+            this.label13.Text = "Telefono Móvil";
+            // 
+            // dsTelefonos
+            // 
+            this.dsTelefonos.DataSetName = "dsTelefonos";
+            this.dsTelefonos.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // telefonosBindingSource
+            // 
+            this.telefonosBindingSource.DataMember = "telefonos";
+            this.telefonosBindingSource.DataSource = this.dsTelefonos;
+            // 
+            // telefonosTableAdapter
+            // 
+            this.telefonosTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -635,6 +638,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsTelefonos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.telefonosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -656,14 +661,10 @@
         private System.Windows.Forms.TextBox txtOrganizacion;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtTelMovil;
+        private System.Windows.Forms.TextBox txtTelFax;
+        private System.Windows.Forms.TextBox txtTelParticular;
+        private System.Windows.Forms.TextBox txtTelTrabajo;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox11;
@@ -693,6 +694,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apeMaternoContactoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn organizacionContactoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn puestoContactoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private dsTelefonos dsTelefonos;
+        private System.Windows.Forms.BindingSource telefonosBindingSource;
+        private dsTelefonosTableAdapters.telefonosTableAdapter telefonosTableAdapter;
     }
 }
 

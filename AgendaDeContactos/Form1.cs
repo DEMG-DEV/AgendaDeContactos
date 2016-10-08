@@ -23,23 +23,36 @@ namespace AgendaDeContactos
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsTelefonos.telefonos' table. You can move, or remove it, as needed.
+            this.telefonosTableAdapter.Fill(this.dsTelefonos.telefonos);
             // TODO: This line of code loads data into the 'dsDetalleContacto.contacto' table. You can move, or remove it, as needed.
             this.contactoTableAdapter.Fill(this.dsDetalleContacto.contacto);
         }
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            if (this.dataGridView1.SelectedRows.Count > 0)
+            try
             {
-                clDetalleContacto detalleContacto = new clDetalleContacto();
+                if (this.dataGridView1.SelectedRows.Count > 0)
+                {
+                    clDetalleContacto detalleContacto = new clDetalleContacto();
+                    detalleContacto.vaciarRegistro(((DataRowView)this.dataGridView1.SelectedRows[0].DataBoundItem).Row);
 
+                    this.contactoBindingSource.Clear();
+                    this.contactoBindingSource.Add(detalleContacto);
 
-                detalleContacto.vaciarRegistro(((DataRowView)this.dataGridView1.SelectedRows[0].DataBoundItem).Row);
-                
+                    //clTelefonos telefonos = new clTelefonos();
+                    //telefonos.vaciarTelefono();
 
-                this.contactoBindingSource.Clear();
-                this.contactoBindingSource.Add(detalleContacto);
-                DataGridViewRow row = dataGridView1.CurrentRow;
+                    //this.telefonosBindingSource.Clear();
+                    //this.telefonosBindingSource.Add(telefonos);
+
+                    DataGridViewRow row = dataGridView1.CurrentRow;
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

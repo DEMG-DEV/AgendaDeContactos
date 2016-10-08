@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,11 +17,6 @@ namespace AgendaDeContactos
         private string particularTelefono;
         private string faxTelefono;
         private string movilTelefono;
-
-        public clTelefonos(long idcontacto)
-        {
-            this.idContacto = idcontacto;
-        }
 
         public long IdTelefono
         {
@@ -107,23 +103,27 @@ namespace AgendaDeContactos
 
         public void borrarRegistro()
         {
-            this.taTelefonos.Delete((int)this.idTelefono);
+            //this.taTelefonos.Delete((int)this.idTelefono);
+            this.taTelefonos.Delete((int)this.idContacto);
         }
 
         public void editarRegistro()
         {
-            this.taTelefonos.Update((int)idContacto, trabajoTelefono, particularTelefono, faxTelefono, movilTelefono, (int)idTelefono);
+            this.taTelefonos.Update((int)idContacto, trabajoTelefono, particularTelefono, faxTelefono, movilTelefono, (int)idContacto);
             //this.taDetalleContacto.Update()
         }
 
-        public void vaciarTelefono(System.Data.DataRow registro)
+        public void vaciarTelefono()
         {
-            idTelefono = Convert.ToInt64(registro["idTelefono"].ToString());
-            idContacto = Convert.ToInt64(registro["idContacto"].ToString());
-            trabajoTelefono = registro["trabajoTelefono"].ToString();
-            particularTelefono = registro["particularTelefono"].ToString();
-            faxTelefono = registro["faxTelefono"].ToString();
-            movilTelefono = registro["movilTelefono"].ToString();
+            DataTable dt = this.taTelefonos.GetDataBy((int)idContacto);
+
+            DataRow row = dt.Rows[0];
+
+            idTelefono = Convert.ToInt64(row["idTelefono"].ToString());
+            trabajoTelefono = row["trabajoTelefono"].ToString();
+            particularTelefono = row["particularTelefono"].ToString();
+            faxTelefono = row["faxTelefono"].ToString();
+            movilTelefono = row["movilTelefono"].ToString();
         }
     }
 }
